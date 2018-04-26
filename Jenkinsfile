@@ -16,7 +16,6 @@ pipeline {
 		}
 		stage('Prepare'){
 			steps {
-				sh 'pacman -Sy --noconfirm makepkg'
         sh 'makepkg .'
 			}
 		}
