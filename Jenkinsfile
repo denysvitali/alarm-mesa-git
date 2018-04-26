@@ -14,12 +14,19 @@ pipeline {
 				checkout scm
 			}
 		}
+
 		stage('Prepare'){
+			steps {
+        sh 'useradd build'
+        sh 'su - build'
+			}
+		}
+
+		stage('Build'){
 			steps {
         sh 'makepkg .'
 			}
 		}
-
 
 	}
 	post {
