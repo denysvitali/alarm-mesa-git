@@ -17,8 +17,9 @@ pipeline {
 
 		stage('Prepare'){
 			steps {
+        sh 'pacman -Sy --noconfirm git wget curl sudo'
         sh 'useradd build'
-        sh 'su - build'
+        sh 'sudo -u build -s'
 			}
 		}
 
